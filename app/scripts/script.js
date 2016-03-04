@@ -9,6 +9,7 @@ var base={
 	randID:"",
 	answ:"",
 	randomQuestion:"",
+	arr:[],
 }
 
 base.getRandomName = function(){
@@ -33,7 +34,7 @@ return bool[randint];
 base.getRandomTemplate = function(){
 
 var tmpl=[["NONE"],["SOME"],["ID"]];
-var randint=this.getRandomInt(0,tmpl.length);
+var randint=this.getRandomIntTemp(0,tmpl.length);
 return tmpl[randint];
 }
 
@@ -42,6 +43,44 @@ base.getRandomID = function(){
 return this.getRandomNumb()+""+this.getRandomNumb()+""+this.getRandomNumb()+""+this.getRandomNumb()+""+this.getRandomNumb();
 
 }
+
+
+base.getRandomIntTemp = function(min, max) {
+	 
+	 var i=0;
+	 
+	 while(i<this.arr.length){
+		 
+		 if(this.arr[i]==""){
+			 
+			 var temp=Math.floor(Math.random() * (max - min)) + min;
+			 var j=0;
+			 while(j<this.arr.length){
+				 if(this.arr[j]==temp){
+					 j++;
+				 }else{
+					 this.arr[i]=temp;
+					 return temp;
+				 }
+	
+			 }
+		 }
+		 i++;
+		 
+	 }
+	 
+	 this.arr=[];
+	 
+	this.arr[0]=Math.floor(Math.random() * (max - min)) + min;
+	
+	return this.arr[0];
+
+}
+
+
+
+
+
 
 
 /*
