@@ -5,10 +5,22 @@ body{
 }
 
 
-#lblQuestion {
+#qq {
 	font-size: 24px;
+	display:none;
 	width:1000px;
 }
+
+
+#lblQuestion{
+	
+	font-family:Courier;
+	font-size: 16px;
+	width:1000px;
+	
+	
+}
+
 
 .btn {
 	margin-top: 12px;

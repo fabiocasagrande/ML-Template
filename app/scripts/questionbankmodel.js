@@ -197,7 +197,7 @@ QuestionBankModel.prototype.chooseQuestion = function() {
 	
 	this.answ=base.answ;
 
-	this.question ="Given the following ML code, what is ans bound to?~datatype student = Name of string * string option * string| ID of int ~ fun mystery (s : student) = ~ ^^^^case s of  ~^^^^^^^^^^^Name(f, SOME m, l) => 1~	^^^^^^^^^| Name(f, NONE, l) => 2~		^^^^^^^^^| ID i => 3 ~~ "+base.randomQuestion+"~~val ans = mystery(s)~~";
+	this.question ="datatype student = Name of string * string option * string| ID of int ~ fun mystery (s : student) = ~ ^^^^case s of  ~^^^^^^^^^^^Name(f, SOME m, l) => 1~	^^^^^^^^^| Name(f, NONE, l) => 2~		^^^^^^^^^| ID i => 3 ~~ "+base.randomQuestion+"~~val ans = mystery(s)~~";
 	return this.question;
 
 	}
