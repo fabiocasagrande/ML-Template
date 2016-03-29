@@ -10,6 +10,7 @@ var base={
 	answ:"",
 	randomQuestion:"",
 	arr:[],
+	countt:0,
 }
 
 base.getRandomName = function(){
@@ -32,10 +33,14 @@ return bool[randint];
 
 
 base.getRandomTemplate = function(){
-
+if(this.countt==3){
+	this.countt=0;
+}
 var tmpl=[["NONE"],["SOME"],["ID"]];
-var randint=this.getRandomIntTemp(0,tmpl.length);
-return tmpl[randint];
+
+//var randint=this.getRandomIntTemp(0,tmpl.length);
+return tmpl[this.countt++];
+
 }
 
 base.getRandomID = function(){
